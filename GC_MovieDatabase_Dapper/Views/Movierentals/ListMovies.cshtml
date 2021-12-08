@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<Movie> 
+
+<h1>Movie List:</h1><br />
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li>
+            @item.Title (@item.Year)&nbsp &nbsp | &nbsp &nbsp<a asp-action="Details" asp-route-id="@item.ID" asp-controller="Movierentals">Details</a>&nbsp &nbsp | &nbsp &nbsp
+            <a asp-action="Edit" asp-route-id="@item.ID" asp-controller="Movierentals">Edit</a>&nbsp &nbsp | &nbsp &nbsp
+            <a asp-action="Delete" asp-route-id="@item.ID" asp-controller="Movierentals">Delete</a>
+        </li>
+    </ul>
+}
+<!--asp-route-id="" This allows us to pass parameters into a link and it should match the
+    parameter name for the action you intend to call. In this case, Details requires an ID to function
+    so id is placed into the asp route. 
+    
+    asp-route-ParameterVariableName   
+    
+    This can be done with any non-object property. Since we're just taking the property out of the object
+    we're able to do that. Passing a full object would not work in this scenario-->
+
+
+

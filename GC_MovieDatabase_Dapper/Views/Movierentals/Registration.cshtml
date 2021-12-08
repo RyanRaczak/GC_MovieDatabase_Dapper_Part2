@@ -1,0 +1,39 @@
+﻿
+
+@model Movie
+
+<form method="post">
+
+    <label asp-for="Title" class="control-label"></label>
+    <input placeholder="Title" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span><br /><br />
+
+    <label asp-for="Year" class="control-label"></label>
+    <input placeholder="2021" asp-for="Year" class="form-control" />
+    <span asp-validation-for="Year" class="text-danger"></span><br /><br />
+
+    <label asp-for="Runtime" class="control-label"></label>
+    <input placeholder="Minutes" asp-for="Runtime" class="form-control" />
+    <span asp-validation-for="Runtime" class="text-danger"></span><br /><br />
+
+    <label asp-for="Genre" class="control-label"></label>
+    <select asp-for="Genre">
+        <option value="" disabled selected hidden>Choose a Genre</option>
+        <option value="Animation">Animation</option>
+        <option value="Horror">Horror</option>
+        <option value="Drama">Drama</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+    </select><br />
+    <span asp-validation-for="Genre" class="text-danger"></span><br /><br />
+
+    <input type="submit" />
+
+</form><br />
+<div>
+    <a asp-action="Index" asp-controller="Movierentals"><button>Cancel</button></a>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

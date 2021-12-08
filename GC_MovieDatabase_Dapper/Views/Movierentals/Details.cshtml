@@ -1,0 +1,14 @@
+﻿
+@model Movie
+
+<div>
+    <p>
+        Title: @Model.Title<br />
+        Year: @Model.Year<br />
+        Genre: @Model.Genre<br />
+        Runtime: @Model.Runtime min<br />
+    </p>
+</div>
+<div>
+    <a asp-action="ListMovies" asp-controller="Movierentals"><button>Back</button></a>
+</div>
